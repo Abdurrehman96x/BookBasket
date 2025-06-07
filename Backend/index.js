@@ -13,11 +13,14 @@ app.use(express.json());
 
 dotenv.config();
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT
 const URI = process.env.MongoDBURI;
 
 app.get("/", (req, res) => {
-    res.send("Welcome to the Book Store API");
+    res.send({
+        activeSatus: "Server is running",
+        message: "Welcome to the Book Store API",
+    });
 }
 );
 
